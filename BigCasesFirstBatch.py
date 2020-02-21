@@ -38,11 +38,18 @@ plt.xlabel('Node Number')
 plt.ylabel('Parallel Rate Ratio')
 
 """set interval for y label"""
+yticks=[]
+tmp=0.4
+while tmp<=1.05:
+    yticks.append(tmp)
+    tmp+=0.05
+
 xticks=range(201, 2002, 100)
 ax.set_xticks(xticks)
+ax.set_yticks(yticks)
 
 """set min and max value for axes"""
-ax.set_ylim([0, 1.1])
+ax.set_ylim([0.4, 1.05])
 ax.set_xlim([201, 2001])
 figTitle='Gains=100, RepeatTimes=5'
 ax.set_title(figTitle)

@@ -24,11 +24,18 @@ def plotNodeNumcase(filePath, nodeNumList, K, savePath):
     plt.ylabel('Ratio')
 
     """set interval for y label"""
+    yticks = []
+    tmp = 0.85
+    while tmp <= 1.025:
+        yticks.append(tmp)
+        tmp += 0.025
+
     xticks = range(0, 100, 5)
     ax.set_xticks(xticks)
+    ax.set_yticks(yticks)
 
     """set min and max value for axes"""
-    ax.set_ylim([0.85, 1.05])
+    ax.set_ylim([0.85, 1.019])
     ax.set_xlim([0, 100])
     # figTitle='K=10, M=4, Gains=100, RepeatTimes=10'
     figTitle = 'K=10, M=4, nodeNum=101'
